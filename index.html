@@ -362,9 +362,24 @@
 
         /* ─── PROJECTS ─── */
         .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .project-card.wide {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        .project-card.wide .project-left { }
+        .project-card.wide .project-right {
+            border-left: 1px solid var(--border);
+            padding-left: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
         }
 
         .project-card {
@@ -409,6 +424,7 @@
 
         .badge-ai { background: rgba(126,211,168,0.15); color: var(--accent2); }
         .badge-ecom { background: rgba(240,192,96,0.15); color: var(--accent3); }
+        .badge-dist { background: rgba(240,192,96,0.12); color: #e8a030; }
 
         .project-title {
             font-family: var(--serif);
@@ -640,6 +656,27 @@
             transform: translateY(0);
         }
 
+        .role-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+        .role-tag {
+            font-size: 0.68rem; font-family: var(--mono);
+            padding: 0.2rem 0.65rem; border-radius: 3px;
+            background: var(--surface2); color: var(--muted);
+            border: 1px solid var(--border);
+        }
+        .arch-block {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+        }
+        .arch-block-title {
+            font-family: var(--mono); font-size: 0.65rem;
+            color: var(--accent); letter-spacing: 0.12em;
+            text-transform: uppercase; margin-bottom: 0.6rem;
+        }
+        .arch-block p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
+        .arch-block strong { color: var(--text); font-weight: 500; }
+
         /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
             nav { padding: 1rem 1.5rem; }
@@ -647,7 +684,9 @@
             #hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
             .hero-right { display: none; }
             section { padding: 4rem 1.5rem; }
-            .projects-grid { grid-template-columns: 1fr; }
+            .projects-grid { gap: 1.5rem; }
+            .project-card.wide { grid-template-columns: 1fr; }
+            .project-card.wide .project-right { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 1.5rem; }
             .cert-list { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
             footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
@@ -687,7 +726,7 @@
             <div class="hero-card-role">backend_developer.js</div>
             <div class="hero-stats">
                 <div class="stat-box">
-                    <span class="stat-num">2+</span>
+                    <span class="stat-num">3+</span>
                     <span class="stat-label">Dự án</span>
                 </div>
                 <div class="stat-box">
@@ -760,11 +799,38 @@
     <h2 class="section-title">Những gì mình đã xây dựng</h2>
     <div class="projects-grid">
 
+        <!-- PROJECT 01: Fashion Shop -->
         <div class="project-card fade-up">
             <div class="project-num">01 /</div>
+            <span class="project-badge badge-ecom">E-Commerce · Fullstack</span>
+            <h3 class="project-title">Fashion Shop</h3>
+            <p class="project-desc">Nền tảng thương mại điện tử bán quần áo & phụ kiện thời trang nam nữ. Hệ thống Fullstack hoàn chỉnh với thanh toán, quản lý đơn hàng và Flash Sale tự động.</p>
+            <ul class="project-features">
+                <li>Tích hợp thanh toán VNPay + COD, xác nhận đơn qua email</li>
+                <li>Flash Sale tự động với node-cron scheduler</li>
+                <li>Giỏ hàng, yêu thích, voucher, đánh giá sản phẩm</li>
+                <li>Theo dõi & lịch sử đơn hàng, quản lý tài khoản</li>
+                <li>Lưu trữ media trên Cloudinary, bảo mật JWT + bcryptjs</li>
+            </ul>
+            <div class="project-stack">
+                <span class="stack-tag">Express.js</span>
+                <span class="stack-tag">TypeScript</span>
+                <span class="stack-tag">Vue 3</span>
+                <span class="stack-tag">SQL Server</span>
+                <span class="stack-tag">MongoDB</span>
+                <span class="stack-tag">Cloudinary</span>
+                <span class="stack-tag">VNPay</span>
+                <span class="stack-tag">Pinia</span>
+            </div>
+            <a href="https://github.com/HoangVanHaii/fashion-shop" target="_blank" class="project-link">Xem mã nguồn →</a>
+        </div>
+
+        <!-- PROJECT 02: Job Portal AI -->
+        <div class="project-card fade-up">
+            <div class="project-num">02 /</div>
             <span class="project-badge badge-ai">AI · Semantic Search</span>
             <h3 class="project-title">Job Portal AI</h3>
-            <p class="project-desc">Hệ thống tuyển dụng thông minh ứng dụng AI để tìm kiếm và gợi ý việc làm theo ngữ nghĩa — không chỉ keyword matching.</p>
+            <p class="project-desc">Hệ thống tuyển dụng thông minh ứng dụng AI để tìm kiếm và gợi ý việc làm theo ngữ nghĩa — vượt xa keyword matching thông thường.</p>
             <ul class="project-features">
                 <li>Semantic Search với Vector Embedding (Pinecone)</li>
                 <li>AI gợi ý công việc phù hợp qua Gemini API</li>
@@ -782,25 +848,62 @@
             <a href="https://github.com/HoangVanHaii" target="_blank" class="project-link">Xem mã nguồn →</a>
         </div>
 
-        <div class="project-card fade-up">
-            <div class="project-num">02 /</div>
-            <span class="project-badge badge-ecom">E-Commerce · Fullstack</span>
-            <h3 class="project-title">Fashion Shop</h3>
-            <p class="project-desc">Nền tảng thương mại điện tử hoàn chỉnh với hệ thống thanh toán, quản lý Flash Sale tự động và chiến lược cache thông minh.</p>
-            <ul class="project-features">
-                <li>Tích hợp thanh toán VNPay (cổng nội địa)</li>
-                <li>Flash Sale engine với Redis Queue + Scheduler</li>
-                <li>Caching layer Redis để tối ưu hiệu năng</li>
-                <li>TypeScript strict mode + SQL Server</li>
-            </ul>
-            <div class="project-stack">
-                <span class="stack-tag">Express.js</span>
-                <span class="stack-tag">TypeScript</span>
-                <span class="stack-tag">SQL Server</span>
-                <span class="stack-tag">Redis</span>
-                <span class="stack-tag">VNPay</span>
+        <!-- PROJECT 03: Fashion Shop Distributed — WIDE CARD -->
+        <div class="project-card wide fade-up">
+            <div class="project-left">
+                <div class="project-num">03 /</div>
+                <span class="project-badge badge-dist">Distributed DB · Hybrid</span>
+                <h3 class="project-title">Fashion Shop<br><em style="font-style:italic;color:var(--accent3)">Distributed</em></h3>
+                <p class="project-desc">Phiên bản nâng cao của Fashion Shop áp dụng kiến trúc <strong style="color:var(--text);font-weight:500">Cơ sở dữ liệu phân tán</strong>: SQL Server Replication theo vùng miền + MongoDB Hybrid. Hệ thống 4 vai trò với phạm vi quản lý riêng biệt từng chi nhánh.</p>
+                <ul class="project-features">
+                    <li>SQL Server Replication: Central phân tán đến HN / ĐN / HCM</li>
+                    <li>Hiển thị sản phẩm theo vùng địa lý người dùng (branch_code)</li>
+                    <li>Flash Sale engine tự động kích hoạt theo lịch</li>
+                    <li>Quản lý đa chi nhánh: sản phẩm, người dùng, voucher độc lập</li>
+                    <li>Thanh toán VNPay + COD, thông báo email Nodemailer</li>
+                </ul>
+                <div class="project-stack">
+                    <span class="stack-tag">Node.js</span>
+                    <span class="stack-tag">Express.js</span>
+                    <span class="stack-tag">TypeScript</span>
+                    <span class="stack-tag">Vue 3</span>
+                    <span class="stack-tag">SQL Server</span>
+                    <span class="stack-tag">MongoDB</span>
+                    <span class="stack-tag">Replication</span>
+                    <span class="stack-tag">Cloudinary</span>
+                    <span class="stack-tag">VNPay</span>
+                    <span class="stack-tag">node-cron</span>
+                </div>
+                <a href="https://github.com/HoangVanHaii/CSDLNC" target="_blank" class="project-link">Xem mã nguồn →</a>
             </div>
-            <a href="https://github.com/HoangVanHaii/fashion-shop" target="_blank" class="project-link">Xem mã nguồn →</a>
+
+            <div class="project-right">
+                <div class="arch-block">
+                    <div class="arch-block-title">Kiến trúc Database</div>
+                    <p><strong>SQL Server</strong> phân tán theo vùng miền với Replication: Central → HN / ĐN / HCM. <strong>MongoDB</strong> lưu media & dữ liệu phi cấu trúc qua Cloudinary.</p>
+                </div>
+
+                <div class="arch-block">
+                    <div class="arch-block-title">Hệ thống phân quyền</div>
+                    <div class="role-tags">
+                        <span class="role-tag">Người dùng</span>
+                        <span class="role-tag">Người bán</span>
+                        <span class="role-tag">Admin chi nhánh</span>
+                        <span class="role-tag">Admin trung tâm</span>
+                    </div>
+                    <p style="margin-top:0.5rem">4 cấp quyền với scope quản lý riêng từ đơn hàng, sản phẩm đến toàn hệ thống.</p>
+                </div>
+
+                <div class="arch-block">
+                    <div class="arch-block-title">Điểm khác biệt so với v1</div>
+                    <ul class="project-features" style="margin:0">
+                        <li>Dữ liệu phân tán thực sự giữa các node SQL</li>
+                        <li>Geo-routing: query đúng node theo vùng miền</li>
+                        <li>Cấu hình Distributor, Publisher, Subscriber</li>
+                        <li>Mô hình Hybrid DB hoàn chỉnh cho production</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </div>
