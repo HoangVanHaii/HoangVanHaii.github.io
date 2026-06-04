@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hoàng Văn Hải — Backend Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         :root {
-            /* DARK MODE (Mặc định) */
+            /* DARK MODE (Default) */
             --bg: #0d0e11;
             --surface: #14161c;
             --surface2: #1c1f28;
-            --border: rgba(255,255,255,0.08);
-            --border-strong: rgba(255,255,255,0.15);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.15);
             --text: #f0f0f0;
             --muted: #7a7f8e;
             --accent: #4f8ef5;
             --accent2: #7ed3a8;
             --accent3: #f0c060;
-            --nav-bg: rgba(13,14,17,0.85); /* Thêm biến cho Nav */
+            --nav-bg: rgba(13, 14, 17, 0.85);
 
             --sans: 'Outfit', sans-serif;
             --serif: 'DM Serif Display', serif;
@@ -33,8 +42,8 @@
             --bg: #f9fafb;
             --surface: #ffffff;
             --surface2: #f3f4f6;
-            --border: rgba(0,0,0,0.08);
-            --border-strong: rgba(0,0,0,0.2);
+            --border: rgba(0, 0, 0, 0.08);
+            --border-strong: rgba(0, 0, 0, 0.2);
             --text: #111827;
             --muted: #4b5563;
             --accent: #2563eb;
@@ -43,7 +52,9 @@
             --nav-bg: rgba(255, 255, 255, 0.85);
         }
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
             background: var(--bg);
@@ -58,7 +69,9 @@
         /* ─── NAV ─── */
         nav {
             position: fixed;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
             padding: 1.2rem 3rem;
             display: flex;
@@ -99,7 +112,9 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: var(--text); }
+        .nav-links a:hover {
+            color: var(--text);
+        }
 
         /* ─── THEME TOGGLE BUTTON ─── */
         .theme-toggle {
@@ -135,7 +150,9 @@
             gap: 4rem;
         }
 
-        .hero-left { position: relative; }
+        .hero-left {
+            position: relative;
+        }
 
         .hero-tag {
             font-family: var(--mono);
@@ -245,7 +262,9 @@
         .hero-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 3px;
             background: linear-gradient(90deg, var(--accent), var(--accent2));
         }
@@ -321,8 +340,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.3; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
         }
 
         /* ─── SECTION COMMON ─── */
@@ -451,7 +477,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(79,142,245,0.06), transparent 40%);
+            background: radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(79, 142, 245, 0.06), transparent 40%);
             pointer-events: none;
         }
 
@@ -472,15 +498,37 @@
             margin-bottom: 1rem;
         }
 
-        .badge-ai { background: rgba(126,211,168,0.15); color: var(--accent2); }
-        .badge-ecom { background: rgba(240,192,96,0.15); color: var(--accent3); }
-        .badge-dist { background: rgba(240,192,96,0.12); color: #e8a030; }
+        .badge-ai {
+            background: rgba(126, 211, 168, 0.15);
+            color: var(--accent2);
+        }
+
+        .badge-ecom {
+            background: rgba(240, 192, 96, 0.15);
+            color: var(--accent3);
+        }
+
+        .badge-dist {
+            background: rgba(240, 192, 96, 0.12);
+            color: #e8a030;
+        }
 
         .project-title {
             font-family: var(--serif);
             font-size: 1.6rem;
             margin-bottom: 0.75rem;
             line-height: 1.2;
+        }
+
+        /* Title Link Style */
+        .project-title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .project-title a:hover {
+            color: var(--accent);
         }
 
         .project-desc {
@@ -529,6 +577,12 @@
             transition: background-color 0.3s ease;
         }
 
+        .project-links-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
         .project-link {
             font-size: 0.8rem;
             font-family: var(--mono);
@@ -541,10 +595,14 @@
             transition: gap 0.2s;
         }
 
-        .project-link:hover { gap: 0.75rem; }
+        .project-link:hover {
+            gap: 0.75rem;
+        }
 
         /* ─── CERTS ─── */
-        #certs { background: none; }
+        #certs {
+            background: none;
+        }
 
         .cert-list {
             display: grid;
@@ -564,7 +622,9 @@
             transition: border-left-color 0.2s, background-color 0.3s;
         }
 
-        .cert-item:hover { border-left-color: var(--accent2); }
+        .cert-item:hover {
+            border-left-color: var(--accent2);
+        }
 
         .cert-icon {
             font-size: 1.2rem;
@@ -621,7 +681,9 @@
             transition: color 0.2s;
         }
 
-        .contact-link:hover { color: var(--text); }
+        .contact-link:hover {
+            color: var(--text);
+        }
 
         .contact-link-icon {
             width: 36px;
@@ -673,7 +735,9 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .avail-row:last-child { border-bottom: none; }
+        .avail-row:last-child {
+            border-bottom: none;
+        }
 
         .avail-val {
             color: var(--accent2);
@@ -710,14 +774,24 @@
             transform: translateY(0);
         }
 
-        .role-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.75rem; }
+        .role-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 0.75rem;
+        }
+
         .role-tag {
-            font-size: 0.68rem; font-family: var(--mono);
-            padding: 0.2rem 0.65rem; border-radius: 3px;
-            background: var(--surface2); color: var(--muted);
+            font-size: 0.68rem;
+            font-family: var(--mono);
+            padding: 0.2rem 0.65rem;
+            border-radius: 3px;
+            background: var(--surface2);
+            color: var(--muted);
             border: 1px solid var(--border);
             transition: background-color 0.3s;
         }
+
         .arch-block {
             background: var(--surface2);
             border: 1px solid var(--border);
@@ -725,417 +799,501 @@
             padding: 1rem 1.25rem;
             transition: background-color 0.3s;
         }
+
         .arch-block-title {
-            font-family: var(--mono); font-size: 0.65rem;
-            color: var(--accent); letter-spacing: 0.12em;
-            text-transform: uppercase; margin-bottom: 0.6rem;
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            color: var(--accent);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
         }
-        .arch-block p { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
-        .arch-block strong { color: var(--text); font-weight: 500; }
+
+        .arch-block p {
+            font-size: 0.8rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        .arch-block strong {
+            color: var(--text);
+            font-weight: 500;
+        }
 
         /* ─── RESPONSIVE ─── */
         @media (max-width: 768px) {
-            nav { padding: 1rem 1.5rem; }
-            .nav-controls { gap: 1rem; }
-            .nav-links { gap: 1rem; display: none; /* Bạn có thể làm menu hamburger nếu cần, tạm ẩn trên mobile hẹp quá */ }
-            #hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 3rem; }
-            .hero-right { display: none; }
-            section { padding: 4rem 1.5rem; }
-            .projects-grid { gap: 1.5rem; }
-            .project-card.wide { grid-template-columns: 1fr; }
-            .project-card.wide .project-right { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 1.5rem; }
-            .cert-list { grid-template-columns: 1fr; }
-            .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-            footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-controls {
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                display: none;
+            }
+
+            #hero {
+                grid-template-columns: 1fr;
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .hero-right {
+                display: none;
+            }
+
+            section {
+                padding: 4rem 1.5rem;
+            }
+
+            .projects-grid {
+                gap: 1.5rem;
+            }
+
+            .project-card.wide {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card.wide .project-right {
+                border-left: none;
+                border-top: 1px solid var(--border);
+                padding-left: 0;
+                padding-top: 1.5rem;
+            }
+
+            .cert-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                padding: 2rem 1.5rem;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<nav>
-    <span class="nav-logo">hvh.dev</span>
-    <div class="nav-controls">
-        <ul class="nav-links">
-            <li><a href="#about">Giới thiệu</a></li>
-            <li><a href="#projects">Dự án</a></li>
-            <li><a href="#certs">Chứng chỉ</a></li>
-            <li><a href="#contact">Liên hệ</a></li>
-        </ul>
-        
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
-            <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-        </button>
-    </div>
-</nav>
-
-<div id="hero">
-    <div class="hero-left">
-        <div class="hero-tag">Backend Developer</div>
-        <h1 class="hero-name">Hoàng<br><em>Văn Hải</em></h1>
-        <p class="hero-desc">
-            Sinh viên CNTT tại <strong>HCMUE</strong>, đam mê xây dựng hệ thống backend hiệu năng cao và tích hợp <strong>AI</strong> vào sản phẩm thực tế. Thế mạnh là hệ sinh thái <strong>Node.js · Vue 3 · Gemini AI</strong>.
-        </p>
-        <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">Xem dự án</a>
-            <a href="mailto:hoanggvanhaii0705@gmail.com" class="btn btn-ghost">Liên hệ ngay</a>
-        </div>
-    </div>
-    <div class="hero-right">
-        <div class="hero-card">
-            <img src="https://github.com/HoangVanHaii.png" alt="Avatar Hoàng Văn Hải" class="hero-avatar">
-            <div class="hero-card-name">Hoàng Văn Hải</div>
-            <div class="hero-card-role">backend_developer.js</div>
-            <div class="hero-stats">
-                <div class="stat-box">
-                    <span class="stat-num">3+</span>
-                    <span class="stat-label">Dự án</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-num">6</span>
-                    <span class="stat-label">Chứng chỉ</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-num">AI</span>
-                    <span class="stat-label">Focus</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-num">HCM</span>
-                    <span class="stat-label">Location</span>
-                </div>
-            </div>
-            <div class="status-dot">Sẵn sàng thực tập</div>
-        </div>
-    </div>
-</div>
-
-<div id="about">
-<div id="skills">
-    <div class="skills-inner">
-        <div class="skills-grid">
-            <div class="skill-group">
-                <h4>Backend</h4>
-                <div class="skill-tags">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express.js</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">REST API</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <h4>Frontend</h4>
-                <div class="skill-tags">
-                    <span class="tag">Vue 3</span>
-                    <span class="tag">Vite</span>
-                    <span class="tag">Tailwind CSS</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <h4>Database & Cache</h4>
-                <div class="skill-tags">
-                    <span class="tag">MongoDB</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">SQL Server</span>
-                    <span class="tag">Redis</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <h4>AI & DevOps</h4>
-                <div class="skill-tags">
-                    <span class="tag">Gemini API</span>
-                    <span class="tag">Pinecone</span>
-                    <span class="tag">Vector DB</span>
-                    <span class="tag">CI/CD</span>
-                    <span class="tag">Git</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-<section id="projects">
-    <div class="section-label">Dự án tiêu biểu</div>
-    <h2 class="section-title">Những gì mình đã xây dựng</h2>
-    <div class="projects-grid">
-
-        <div class="project-card fade-up">
-            <div class="project-num">01 /</div>
-            <span class="project-badge badge-ecom">E-Commerce · Fullstack</span>
-            <h3 class="project-title">Fashion Shop</h3>
-            <p class="project-desc">Nền tảng thương mại điện tử bán quần áo & phụ kiện thời trang nam nữ. Hệ thống Fullstack hoàn chỉnh với thanh toán, quản lý đơn hàng và Flash Sale tự động.</p>
-            <ul class="project-features">
-                <li>Tích hợp thanh toán VNPay + COD, xác nhận đơn qua email</li>
-                <li>Flash Sale tự động với node-cron scheduler</li>
-                <li>Giỏ hàng, yêu thích, voucher, đánh giá sản phẩm</li>
-                <li>Theo dõi & lịch sử đơn hàng, quản lý tài khoản</li>
-                <li>Lưu trữ media trên Cloudinary, bảo mật JWT + bcryptjs</li>
+    <nav>
+        <span class="nav-logo">hvh.dev</span>
+        <div class="nav-controls">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certs">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="project-stack">
-                <span class="stack-tag">Express.js</span>
-                <span class="stack-tag">TypeScript</span>
-                <span class="stack-tag">Vue 3</span>
-                <span class="stack-tag">SQL Server</span>
-                <span class="stack-tag">MongoDB</span>
-                <span class="stack-tag">Cloudinary</span>
-                <span class="stack-tag">VNPay</span>
-                <span class="stack-tag">Pinia</span>
-            </div>
-            <a href="https://github.com/HoangVanHaii/fashion-shop" target="_blank" class="project-link">Xem mã nguồn →</a>
-        </div>
 
-        <div class="project-card fade-up">
-            <div class="project-num">02 /</div>
-            <span class="project-badge badge-ai">AI · Semantic Search</span>
-            <h3 class="project-title">Job Portal AI</h3>
-            <p class="project-desc">Hệ thống tuyển dụng thông minh ứng dụng AI để tìm kiếm và gợi ý việc làm theo ngữ nghĩa — vượt xa keyword matching thông thường.</p>
-            <ul class="project-features">
-                <li>Semantic Search với Vector Embedding (Pinecone)</li>
-                <li>AI gợi ý công việc phù hợp qua Gemini API</li>
-                <li>Kiến trúc Fullstack: Node.js Backend + Vue 3 Frontend</li>
-                <li>Dual database: MongoDB (NoSQL) + MySQL (relational)</li>
-            </ul>
-            <div class="project-stack">
-                <span class="stack-tag">Node.js</span>
-                <span class="stack-tag">Vue 3</span>
-                <span class="stack-tag">MongoDB</span>
-                <span class="stack-tag">MySQL</span>
-                <span class="stack-tag">Pinecone</span>
-                <span class="stack-tag">Gemini AI</span>
-            </div>
-            <a href="https://github.com/HoangVanHaii" target="_blank" class="project-link">Xem mã nguồn →</a>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+                <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
         </div>
+    </nav>
 
-        <div class="project-card wide fade-up">
-            <div class="project-left">
-                <div class="project-num">03 /</div>
-                <span class="project-badge badge-dist">Distributed DB · Hybrid</span>
-                <h3 class="project-title">Fashion Shop<br><em style="font-style:italic;color:var(--accent3)">Distributed</em></h3>
-                <p class="project-desc">Phiên bản nâng cao của Fashion Shop áp dụng kiến trúc <strong style="color:var(--text);font-weight:500">Cơ sở dữ liệu phân tán</strong>: SQL Server Replication theo vùng miền + MongoDB Hybrid. Hệ thống 4 vai trò với phạm vi quản lý riêng biệt từng chi nhánh.</p>
+    <div id="hero">
+        <div class="hero-left">
+            <div class="hero-tag">Backend Developer</div>
+            <h1 class="hero-name">Hoàng<br><em>Văn Hải</em></h1>
+            <p class="hero-desc">
+                IT student at <strong>HCMUE</strong>, passionate about building high-performance backend systems and
+                integrating <strong>AI</strong> into real-world products. Strong expertise in the <strong>Node.js · Vue
+                    3 · Gemini AI</strong> ecosystem.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="mailto:hoanggvanhaii0705@gmail.com" class="btn btn-ghost">Contact Me</a>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="hero-card">
+                <img src="https://github.com/HoangVanHaii.png" alt="Avatar Hoàng Văn Hải" class="hero-avatar">
+                <div class="hero-card-name">Hoàng Văn Hải</div>
+                <div class="hero-card-role">backend_developer.js</div>
+                <div class="hero-stats">
+                    <div class="stat-box">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Projects</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">6</span>
+                        <span class="stat-label">Certificates</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">AI</span>
+                        <span class="stat-label">Focus</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-num">HCM</span>
+                        <span class="stat-label">Location</span>
+                    </div>
+                </div>
+                <div class="status-dot">Available for Internship</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about">
+        <div id="skills">
+            <div class="skills-inner">
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h4>Backend</h4>
+                        <div class="skill-tags">
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">REST API</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Frontend</h4>
+                        <div class="skill-tags">
+                            <span class="tag">Vue 3</span>
+                            <span class="tag">Vite</span>
+                            <span class="tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Database & Cache</h4>
+                        <div class="skill-tags">
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">SQL Server</span>
+                            <span class="tag">Redis</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>AI & DevOps</h4>
+                        <div class="skill-tags">
+                            <span class="tag">Gemini API</span>
+                            <span class="tag">Pinecone</span>
+                            <span class="tag">Vector DB</span>
+                            <span class="tag">CI/CD</span>
+                            <span class="tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="projects">
+        <div class="section-label">Featured Projects</div>
+        <h2 class="section-title">What I've Built</h2>
+        <div class="projects-grid">
+
+            <div class="project-card fade-up">
+                <div class="project-num">01 /</div>
+                <span class="project-badge badge-ecom">E-Commerce · Fullstack</span>
+                <h3 class="project-title"><a href="https://fashion.hoangvanhai.me" target="_blank">Fashion Shop</a></h3>
+                <p class="project-desc">An e-commerce platform for men's and women's fashion and accessories. A complete
+                    full-stack system with payment, order management, and automated Flash Sales.</p>
                 <ul class="project-features">
-                    <li>SQL Server Replication: Central phân tán đến HN / ĐN / HCM</li>
-                    <li>Hiển thị sản phẩm theo vùng địa lý người dùng (branch_code)</li>
-                    <li>Flash Sale engine tự động kích hoạt theo lịch</li>
-                    <li>Quản lý đa chi nhánh: sản phẩm, người dùng, voucher độc lập</li>
-                    <li>Thanh toán VNPay + COD, thông báo email Nodemailer</li>
+                    <li>VNPay + COD payment integration, email order confirmation</li>
+                    <li>Automated Flash Sale using node-cron scheduler</li>
+                    <li>Shopping cart, wishlist, vouchers, product reviews</li>
+                    <li>Order tracking & history, account management</li>
+                    <li>Media storage on Cloudinary, JWT + bcryptjs security</li>
                 </ul>
                 <div class="project-stack">
-                    <span class="stack-tag">Node.js</span>
                     <span class="stack-tag">Express.js</span>
                     <span class="stack-tag">TypeScript</span>
                     <span class="stack-tag">Vue 3</span>
                     <span class="stack-tag">SQL Server</span>
                     <span class="stack-tag">MongoDB</span>
-                    <span class="stack-tag">Replication</span>
                     <span class="stack-tag">Cloudinary</span>
                     <span class="stack-tag">VNPay</span>
-                    <span class="stack-tag">node-cron</span>
+                    <span class="stack-tag">Pinia</span>
                 </div>
-                <a href="https://github.com/HoangVanHaii/CSDLNC" target="_blank" class="project-link">Xem mã nguồn →</a>
+                <div class="project-links-group">
+                    <a href="https://fashion.hoangvanhai.me" target="_blank" class="project-link">View Live Demo →</a>
+                    <a href="https://github.com/HoangVanHaii/fashion-shop" target="_blank" class="project-link">View
+                        Source Code →</a>
+                </div>
             </div>
 
-            <div class="project-right">
-                <div class="arch-block">
-                    <div class="arch-block-title">Kiến trúc Database</div>
-                    <p><strong>SQL Server</strong> phân tán theo vùng miền với Replication: Central → HN / ĐN / HCM. <strong>MongoDB</strong> lưu media & dữ liệu phi cấu trúc qua Cloudinary.</p>
+            <div class="project-card fade-up">
+                <div class="project-num">02 /</div>
+                <span class="project-badge badge-ai">AI · Semantic Search</span>
+                <h3 class="project-title"><a href="https://jobportal.hoangvanhai.me" target="_blank">Job Portal AI</a>
+                </h3>
+                <p class="project-desc">A smart recruitment system applying AI for semantic job search and
+                    recommendations — going beyond conventional keyword matching.</p>
+                <ul class="project-features">
+                    <li>Semantic Search with Vector Embedding (Pinecone)</li>
+                    <li>AI-powered job recommendations via Gemini API</li>
+                    <li>Fullstack architecture: Node.js Backend + Vue 3 Frontend</li>
+                    <li>Dual database: MongoDB (NoSQL) + MySQL (relational)</li>
+                </ul>
+                <div class="project-stack">
+                    <span class="stack-tag">Node.js</span>
+                    <span class="stack-tag">Vue 3</span>
+                    <span class="stack-tag">MongoDB</span>
+                    <span class="stack-tag">MySQL</span>
+                    <span class="stack-tag">Pinecone</span>
+                    <span class="stack-tag">Gemini AI</span>
                 </div>
-
-                <div class="arch-block">
-                    <div class="arch-block-title">Hệ thống phân quyền</div>
-                    <div class="role-tags">
-                        <span class="role-tag">Người dùng</span>
-                        <span class="role-tag">Người bán</span>
-                        <span class="role-tag">Admin chi nhánh</span>
-                        <span class="role-tag">Admin trung tâm</span>
-                    </div>
-                    <p style="margin-top:0.5rem">4 cấp quyền với scope quản lý riêng từ đơn hàng, sản phẩm đến toàn hệ thống.</p>
+                <div class="project-links-group">
+                    <a href="https://jobportal.hoangvanhai.me" target="_blank" class="project-link">View Live Demo →</a>
+                    <a href="https://github.com/HoangVanHaii" target="_blank" class="project-link">View Source Code
+                        →</a>
                 </div>
+            </div>
 
-                <div class="arch-block">
-                    <div class="arch-block-title">Điểm khác biệt so với v1</div>
-                    <ul class="project-features" style="margin:0">
-                        <li>Dữ liệu phân tán thực sự giữa các node SQL</li>
-                        <li>Geo-routing: query đúng node theo vùng miền</li>
-                        <li>Cấu hình Distributor, Publisher, Subscriber</li>
-                        <li>Mô hình Hybrid DB hoàn chỉnh cho production</li>
+            <div class="project-card wide fade-up">
+                <div class="project-left">
+                    <div class="project-num">03 /</div>
+                    <span class="project-badge badge-dist">Distributed DB · Hybrid</span>
+                    <h3 class="project-title"><a href="https://github.com/HoangVanHaii/CSDLNC" target="_blank">Fashion
+                            Shop<br><em style="font-style:italic;color:var(--accent3)">Distributed</em></a></h3>
+                    <p class="project-desc">An advanced version of Fashion Shop applying a <strong
+                            style="color:var(--text);font-weight:500">Distributed Database</strong> architecture: SQL
+                        Server Replication by region + MongoDB Hybrid. A 4-role system with separate management scopes
+                        for each branch.</p>
+                    <ul class="project-features">
+                        <li>SQL Server Replication: Central distributed to Hanoi / Da Nang / HCMC</li>
+                        <li>Display products based on user's geographic location (branch_code)</li>
+                        <li>Flash Sale engine automatically triggered by schedule</li>
+                        <li>Multi-branch management: independent products, users, vouchers</li>
+                        <li>VNPay + COD payment, Nodemailer email notifications</li>
                     </ul>
+                    <div class="project-stack">
+                        <span class="stack-tag">Node.js</span>
+                        <span class="stack-tag">Express.js</span>
+                        <span class="stack-tag">TypeScript</span>
+                        <span class="stack-tag">Vue 3</span>
+                        <span class="stack-tag">SQL Server</span>
+                        <span class="stack-tag">MongoDB</span>
+                        <span class="stack-tag">Replication</span>
+                        <span class="stack-tag">Cloudinary</span>
+                        <span class="stack-tag">VNPay</span>
+                        <span class="stack-tag">node-cron</span>
+                    </div>
+                    <div class="project-links-group">
+                        <a href="https://github.com/HoangVanHaii/CSDLNC" target="_blank" class="project-link">View
+                            Source Code →</a>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-    </div>
-</section>
+                <div class="project-right">
+                    <div class="arch-block">
+                        <div class="arch-block-title">Database Architecture</div>
+                        <p><strong>SQL Server</strong> distributed by region with Replication: Central → Hanoi / Da Nang
+                            / HCMC. <strong>MongoDB</strong> for media & unstructured data via Cloudinary.</p>
+                    </div>
 
-<section id="certs">
-    <div class="section-label">Học tập & Phát triển</div>
-    <h2 class="section-title">Chứng chỉ đã đạt được</h2>
-    <div class="cert-list">
-        <div class="cert-item fade-up">
-            <div class="cert-icon">◆</div>
-            <div>
-                <div class="cert-name">Node.js: Design Patterns</div>
-                <div class="cert-src">LinkedIn Learning</div>
-            </div>
-        </div>
-        <div class="cert-item fade-up">
-            <div class="cert-icon">◆</div>
-            <div>
-                <div class="cert-name">Generative AI: Working with LLMs</div>
-                <div class="cert-src">LinkedIn Learning</div>
-            </div>
-        </div>
-        <div class="cert-item fade-up">
-            <div class="cert-icon">◆</div>
-            <div>
-                <div class="cert-name">CI/CD for Beginners</div>
-                <div class="cert-src">Simplilearn</div>
-            </div>
-        </div>
-        <div class="cert-item fade-up">
-            <div class="cert-icon">◆</div>
-            <div>
-                <div class="cert-name">Introduction to Cyber Security</div>
-                <div class="cert-src">Simplilearn</div>
-            </div>
-        </div>
-        <div class="cert-item fade-up">
-            <div class="cert-icon">◆</div>
-            <div>
-                <div class="cert-name">GitHub Copilot Fundamentals</div>
-                <div class="cert-src">Simplilearn</div>
-            </div>
-        </div>
-        <div class="cert-item fade-up">
-            <div class="cert-icon">◆</div>
-            <div>
-                <div class="cert-name">Introduction to Software Testing</div>
-                <div class="cert-src">Simplilearn</div>
-            </div>
-        </div>
-    </div>
-</section>
+                    <div class="arch-block">
+                        <div class="arch-block-title">Authorization System</div>
+                        <div class="role-tags">
+                            <span class="role-tag">User</span>
+                            <span class="role-tag">Seller</span>
+                            <span class="role-tag">Branch Admin</span>
+                            <span class="role-tag">Central Admin</span>
+                        </div>
+                        <p style="margin-top:0.5rem">4 privilege levels with specific management scopes from orders and
+                            products to the entire system.</p>
+                    </div>
 
-<section id="contact">
-    <div class="section-label">Kết nối</div>
-    <h2 class="section-title">Hãy cùng hợp tác</h2>
-    <div class="contact-grid">
-        <div class="contact-left">
-            <p>Mình đang tìm kiếm cơ hội <strong style="color:var(--text);font-weight:500">thực tập Backend</strong> và sẵn sàng tham gia các dự án hợp tác. Nếu bạn có dự án thú vị hoặc cần một Backend Developer nhiệt huyết — hãy kết nối!</p>
-            <div class="contact-links">
-                <a href="mailto:hoanggvanhaii0705@gmail.com" class="contact-link">
-                    <div class="contact-link-icon">@</div>
-                    hoanggvanhaii0705@gmail.com
-                </a>
-                <a href="https://github.com/HoangVanHaii" target="_blank" class="contact-link">
-                    <div class="contact-link-icon">GH</div>
-                    github.com/HoangVanHaii
-                </a>
-                <a href="https://www.linkedin.com/in/hải-hoàng-văn-953068406/" target="_blank" class="contact-link">
-                    <div class="contact-link-icon">in</div>
-                    LinkedIn Profile
-                </a>
+                    <div class="arch-block">
+                        <div class="arch-block-title">Differences from v1</div>
+                        <ul class="project-features" style="margin:0">
+                            <li>True distributed data across SQL nodes</li>
+                            <li>Geo-routing: querying the correct node based on region</li>
+                            <li>Distributor, Publisher, Subscriber configuration</li>
+                            <li>Complete Hybrid DB model for production</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="certs">
+        <div class="section-label">Learning & Development</div>
+        <h2 class="section-title">Achieved Certifications</h2>
+        <div class="cert-list">
+            <div class="cert-item fade-up">
+                <div class="cert-icon">◆</div>
+                <div>
+                    <div class="cert-name">Node.js: Design Patterns</div>
+                    <div class="cert-src">LinkedIn Learning</div>
+                </div>
+            </div>
+            <div class="cert-item fade-up">
+                <div class="cert-icon">◆</div>
+                <div>
+                    <div class="cert-name">Generative AI: Working with LLMs</div>
+                    <div class="cert-src">LinkedIn Learning</div>
+                </div>
+            </div>
+            <div class="cert-item fade-up">
+                <div class="cert-icon">◆</div>
+                <div>
+                    <div class="cert-name">CI/CD for Beginners</div>
+                    <div class="cert-src">Simplilearn</div>
+                </div>
+            </div>
+            <div class="cert-item fade-up">
+                <div class="cert-icon">◆</div>
+                <div>
+                    <div class="cert-name">Introduction to Cyber Security</div>
+                    <div class="cert-src">Simplilearn</div>
+                </div>
+            </div>
+            <div class="cert-item fade-up">
+                <div class="cert-icon">◆</div>
+                <div>
+                    <div class="cert-name">GitHub Copilot Fundamentals</div>
+                    <div class="cert-src">Simplilearn</div>
+                </div>
+            </div>
+            <div class="cert-item fade-up">
+                <div class="cert-icon">◆</div>
+                <div>
+                    <div class="cert-name">Introduction to Software Testing</div>
+                    <div class="cert-src">Simplilearn</div>
+                </div>
             </div>
         </div>
-        <div class="availability-box fade-up">
-            <div class="avail-header">
-                <span class="avail-title">Thông hiện tại</span>
-                <div class="status-dot">Open to work</div>
+    </section>
+
+    <section id="contact">
+        <div class="section-label">Connect</div>
+        <h2 class="section-title">Let's work together</h2>
+        <div class="contact-grid">
+            <div class="contact-left">
+                <p>I am looking for a <strong style="color:var(--text);font-weight:500">Backend Internship</strong>
+                    opportunity and am open to collaborative projects. If you have an exciting project or need a
+                    passionate Backend Developer — let's connect!</p>
+                <div class="contact-links">
+                    <a href="mailto:hoanggvanhaii0705@gmail.com" class="contact-link">
+                        <div class="contact-link-icon">@</div>
+                        hoanggvanhaii0705@gmail.com
+                    </a>
+                    <a href="https://github.com/HoangVanHaii" target="_blank" class="contact-link">
+                        <div class="contact-link-icon">GH</div>
+                        github.com/HoangVanHaii
+                    </a>
+                    <a href="https://www.linkedin.com/in/hải-hoàng-văn-953068406/" target="_blank" class="contact-link">
+                        <div class="contact-link-icon">in</div>
+                        LinkedIn Profile
+                    </a>
+                </div>
             </div>
-            <div class="avail-grid">
-                <div class="avail-row">
-                    <span>Vị trí tìm kiếm</span>
-                    <span class="avail-val">Backend Intern</span>
+            <div class="availability-box fade-up">
+                <div class="avail-header">
+                    <span class="avail-title">Current Status</span>
+                    <div class="status-dot">Open to work</div>
                 </div>
-                <div class="avail-row">
-                    <span>Hình thức</span>
-                    <span class="avail-val">Full-time / Part-time</span>
-                </div>
-                <div class="avail-row">
-                    <span>Địa điểm</span>
-                    <span class="avail-val">TP. Hồ Chí Minh</span>
-                </div>
-                <div class="avail-row">
-                    <span>Trường</span>
-                    <span class="avail-val">HCMUE — CNTT</span>
-                </div>
-                <div class="avail-row">
-                    <span>Phản hồi trong</span>
-                    <span class="avail-val">24 giờ</span>
+                <div class="avail-grid">
+                    <div class="avail-row">
+                        <span>Looking for</span>
+                        <span class="avail-val">Backend Intern</span>
+                    </div>
+                    <div class="avail-row">
+                        <span>Employment Type</span>
+                        <span class="avail-val">Full-time / Part-time</span>
+                    </div>
+                    <div class="avail-row">
+                        <span>Location</span>
+                        <span class="avail-val">Ho Chi Minh City</span>
+                    </div>
+                    <div class="avail-row">
+                        <span>University</span>
+                        <span class="avail-val">HCMUE — IT</span>
+                    </div>
+                    <div class="avail-row">
+                        <span>Response time</span>
+                        <span class="avail-val">Within 24 hours</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <p>© 2026 — Hoàng Văn Hải</p>
-    <p>Built with HTML · CSS · passion</p>
-</footer>
+    <footer>
+        <p>© 2026 — Hoàng Văn Hải</p>
+        <p>Built with HTML · CSS · passion</p>
+    </footer>
 
-<script>
-    // ─── SCROLL ANIMATIONS ───
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-            if (entry.isIntersecting) {
-                entry.target.style.transitionDelay = (i * 0.08) + 's';
-                entry.target.classList.add('visible');
+    <script>
+        // ─── SCROLL ANIMATIONS ───
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.transitionDelay = (i * 0.08) + 's';
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ─── CARD GLOW EFFECT ───
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                card.style.setProperty('--mouse-x', x + '%');
+                card.style.setProperty('--mouse-y', y + '%');
+            });
+        });
+
+        // ─── THEME TOGGLE LOGIC ───
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const rootElement = document.documentElement;
+
+        const sunIcon = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
+        const moonIcon = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
+
+        // Initialize initial state
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        if (currentTheme === 'light') {
+            rootElement.setAttribute('data-theme', 'light');
+            themeIcon.innerHTML = moonIcon;
+        } else {
+            themeIcon.innerHTML = sunIcon;
+        }
+
+        // Listen to click event
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = rootElement.getAttribute('data-theme') === 'light';
+
+            if (isLight) {
+                rootElement.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.innerHTML = sunIcon;
+            } else {
+                rootElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.innerHTML = moonIcon;
             }
         });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-    // ─── CARD GLOW EFFECT ───
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width) * 100;
-            const y = ((e.clientY - rect.top) / rect.height) * 100;
-            card.style.setProperty('--mouse-x', x + '%');
-            card.style.setProperty('--mouse-y', y + '%');
-        });
-    });
-
-    // ─── THEME TOGGLE LOGIC ───
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    const rootElement = document.documentElement;
-
-    const sunIcon = `<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>`;
-    const moonIcon = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>`;
-
-    // Khởi tạo trạng thái ban đầu
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    if (currentTheme === 'light') {
-        rootElement.setAttribute('data-theme', 'light');
-        themeIcon.innerHTML = moonIcon;
-    } else {
-        themeIcon.innerHTML = sunIcon;
-    }
-
-    // Lắng nghe sự kiện click
-    themeToggleBtn.addEventListener('click', () => {
-        const isLight = rootElement.getAttribute('data-theme') === 'light';
-        
-        if (isLight) {
-            rootElement.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'dark');
-            themeIcon.innerHTML = sunIcon;
-        } else {
-            rootElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-            themeIcon.innerHTML = moonIcon;
-        }
-    });
-</script>
+    </script>
 </body>
+
 </html>
